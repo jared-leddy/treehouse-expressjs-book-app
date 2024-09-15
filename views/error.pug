@@ -1,0 +1,43 @@
+extends layout-dash
+
+block content
+  section.content-body(role='main')
+    header.page-header
+      h2 404
+      .right-wrapper.text-right
+        ol.breadcrumbs
+          li
+            a(href='index.html')
+              i.fas.fa-home
+          li
+            span Pages
+          li
+            span 404
+        a.sidebar-right-toggle(data-open='sidebar-right')
+          i.fas.fa-chevron-left
+    // start: page
+    section.body-error.error-inside
+      .center-error
+        .row
+          .col-lg-8
+            .main-error.mb-3
+              h2.error-code.text-dark.text-center.font-weight-semibold.m-0
+                | 404 
+                i.fas.fa-file
+              p.error-explanation.text-center We&apos;re sorry, but the page you were looking for doesn&apos;t exist.
+          .col-lg-4
+            h4.text Here are some useful links
+            ul.nav.nav-list.flex-column.primary
+              li.nav-item
+                a.nav-link(href='#')
+                  i.fas.fa-caret-right.text-dark
+                  |  Dashboard
+              li.nav-item
+                a.nav-link(href='#')
+                  i.fas.fa-caret-right.text-dark
+                  |  User Profile
+              li.nav-item
+                a.nav-link(href='#')
+                  i.fas.fa-caret-right.text-dark
+                  |  FAQ&apos;s
+    // end: page

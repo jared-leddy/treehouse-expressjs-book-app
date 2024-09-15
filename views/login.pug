@@ -1,0 +1,52 @@
+extends layout-main
+
+block content
+  // start: page
+  section.body-sign
+    .center-sign
+      a.logo.float-left(href='/')
+        img(src='img/logo.png' height='54' alt='Porto Admin')
+      .panel.card-sign
+        .card-title-sign.mt-3.text-right
+          h2.title.text-uppercase.font-weight-bold.m-0
+            i.fas.fa-user.mr-1
+            |  Sign In
+        .card-body
+          form(action='index.html' method='post')
+            .form-group.mb-3
+              label Username
+              .input-group
+                input.form-control.form-control-lg(name='username' type='text')
+                span.input-group-append
+                  span.input-group-text
+                    i.fas.fa-user
+            .form-group.mb-3
+              .clearfix
+                label.float-left Password
+                a.float-right(href='pages-recover-password.html') Lost Password?
+              .input-group
+                input.form-control.form-control-lg(name='pwd' type='password')
+                span.input-group-append
+                  span.input-group-text
+                    i.fas.fa-lock
+            .row
+              .col-sm-8
+                .checkbox-custom.checkbox-default
+                  input#RememberMe(name='rememberme' type='checkbox')
+                  label(for='RememberMe') Remember Me
+              .col-sm-4.text-right
+                button.btn.btn-primary.mt-2(type='submit') Sign In
+            span.mt-3.mb-3.line-thru.text-center.text-uppercase
+              span or
+            .mb-1.text-center
+              a.btn.btn-facebook.mb-3.ml-1.mr-1(href='#')
+                | Connect with 
+                i.fab.fa-facebook-f
+              a.btn.btn-twitter.mb-3.ml-1.mr-1(href='#')
+                | Connect with 
+                i.fab.fa-twitter
+            p.text-center
+              | Don&apos;t have an account yet? 
+              a(href='pages-signup.html') Sign Up!
+      p.text-center.text-muted.mt-3.mb-3 &copy; Copyright 2017. All Rights Reserved.
+  // end: page

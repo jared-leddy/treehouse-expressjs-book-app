@@ -1,0 +1,264 @@
+section.content-body(role='main')
+  header.page-header
+    h2 User Profile
+    .right-wrapper.text-right
+      ol.breadcrumbs
+        li
+          a(href='index.html')
+            i.fas.fa-home
+        li
+          span Pages
+        li
+          span User Profile
+      a.sidebar-right-toggle(data-open='sidebar-right')
+        i.fas.fa-chevron-left
+  // start: page
+  .row
+    .col-lg-4.col-xl-3.mb-4.mb-xl-0
+      section.card
+        .card-body
+          .thumb-info.mb-3
+            img.rounded.img-fluid(src='img/!logged-user.jpg' alt='John Doe')
+            .thumb-info-title
+              span.thumb-info-inner John Doe
+              span.thumb-info-type CEO
+          .widget-toggle-expand.mb-3
+            .widget-header
+              h5.mb-2 Profile Completion
+              .widget-toggle +
+            .widget-content-collapsed
+              .progress.progress-xs.light
+                .progress-bar(role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 60%;')
+                  | 60%
+            .widget-content-expanded
+              ul.simple-todo-list.mt-3
+                li.completed Update Profile Picture
+                li.completed Change Personal Information
+                li Update Social Media
+                li Follow Someone
+          hr.dotted.short
+          h5.mb-2.mt-3 About
+          p.text-2
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis vulputate quam. Interdum et malesuada
+          .clearfix
+            a.text-uppercase.text-muted.float-right(href='#') (View All)
+          hr.dotted.short
+          .social-icons-list
+            a(rel='tooltip' data-placement='bottom' target='_blank' href='http://www.facebook.com' data-original-title='Facebook')
+              i.fab.fa-facebook-f
+              span Facebook
+            a(rel='tooltip' data-placement='bottom' href='http://www.twitter.com' data-original-title='Twitter')
+              i.fab.fa-twitter
+              span Twitter
+            a(rel='tooltip' data-placement='bottom' href='http://www.linkedin.com' data-original-title='Linkedin')
+              i.fab.fa-linkedin-in
+              span Linkedin
+      section.card
+        header.card-header
+          .card-actions
+            a.card-action.card-action-toggle(href='#' data-card-toggle='')
+            a.card-action.card-action-dismiss(href='#' data-card-dismiss='')
+          h2.card-title
+            span.badge.badge-primary.label-sm.font-weight-normal.va-middle.mr-3 198
+            span.va-middle Friends
+        .card-body
+          .content
+            ul.simple-user-list
+              li
+                figure.image.rounded
+                  img.rounded-circle(src='img/!sample-user.jpg' alt='Joseph Doe Junior')
+                span.title Joseph Doe Junior
+                span.message.truncate Lorem ipsum dolor sit.
+              li
+                figure.image.rounded
+                  img.rounded-circle(src='img/!sample-user.jpg' alt='Joseph Junior')
+                span.title Joseph Junior
+                span.message.truncate Lorem ipsum dolor sit.
+              li
+                figure.image.rounded
+                  img.rounded-circle(src='img/!sample-user.jpg' alt='Joe Junior')
+                span.title Joe Junior
+                span.message.truncate Lorem ipsum dolor sit.
+              li
+                figure.image.rounded
+                  img.rounded-circle(src='img/!sample-user.jpg' alt='Joseph Doe Junior')
+                span.title Joseph Doe Junior
+                span.message.truncate Lorem ipsum dolor sit.
+            hr.dotted.short
+            .text-right
+              a.text-uppercase.text-muted(href='#') (View All)
+        .card-footer
+          .input-group
+            input#q.form-control(type='text' name='q' placeholder='Search...')
+            span.input-group-append
+              button.btn.btn-default(type='submit')
+                i.fas.fa-search
+      section.card
+        header.card-header
+          .card-actions
+            a.card-action.card-action-toggle(href='#' data-card-toggle='')
+            a.card-action.card-action-dismiss(href='#' data-card-dismiss='')
+          h2.card-title Popular Posts
+        .card-body
+          ul.simple-post-list
+            li
+              .post-image
+                .img-thumbnail
+                  a(href='#')
+                    img(src='img/post-thumb-1.jpg' alt='')
+              .post-info
+                a(href='#') Nullam Vitae Nibh Un Odiosters
+                .post-meta
+                  | Jan 10, 2017
+            li
+              .post-image
+                .img-thumbnail
+                  a(href='#')
+                    img(src='img/post-thumb-2.jpg' alt='')
+              .post-info
+                a(href='#') Vitae Nibh Un Odiosters
+                .post-meta
+                  | Jan 10, 2017
+            li
+              .post-image
+                .img-thumbnail
+                  a(href='#')
+                    img(src='img/post-thumb-3.jpg' alt='')
+              .post-info
+                a(href='#') Odiosters Nullam Vitae
+                .post-meta
+                  | Jan 10, 2017
+    .col-lg-8.col-xl-6
+      .tabs
+        ul.nav.nav-tabs.tabs-primary
+          li.nav-item.active
+            a.nav-link(href='#overview' data-toggle='tab') Overview
+          li.nav-item
+            a.nav-link(href='#edit' data-toggle='tab') Edit
+        .tab-content
+          #overview.tab-pane.active
+            .p-3
+              h4.mb-3 Update Status
+              section.simple-compose-box.mb-3
+                form(method='get' action='/')
+                  textarea(name='message-text' data-plugin-textarea-autosize='' placeholder="What's on your mind?" rows='1')
+                .compose-box-footer
+                  ul.compose-toolbar
+                    li
+                      a(href='#')
+                        i.fas.fa-camera
+                    li
+                      a(href='#')
+                        i.fas.fa-map-marker-alt
+                  ul.compose-btn
+                    li
+                      a.btn.btn-primary.btn-xs(href='#') Post
+              h4.mb-3.pt-4 Timeline
+              .timeline.timeline-simple.mt-3.mb-3
+                .tm-body
+                  .tm-title
+                    h5.m-0.pt-2.pb-2.text-uppercase November 2017
+                  ol.tm-items
+                    li
+                      .tm-box
+                        p.text-muted.mb-0 7 months ago.
+                        p
+                          | It&apos;s awesome when we find a good solution for our projects, Porto Admin is 
+                          span.text-primary #awesome
+                    li
+                      .tm-box
+                        p.text-muted.mb-0 7 months ago.
+                        p
+                          | What is your biggest developer pain point?
+                    li
+                      .tm-box
+                        p.text-muted.mb-0 7 months ago.
+                        p
+                          | Checkout! How cool is that!
+                        .thumbnail-gallery
+                          a.img-thumbnail.lightbox(href='img/projects/project-4.jpg' data-plugin-options='{ "type":"image" }')
+                            img.img-fluid(width='215' src='img/projects/project-4.jpg')
+                            span.zoom
+                              i.fas.fa-search
+          #edit.tab-pane
+            form.p-3
+              h4.mb-3 Personal Information
+              .form-group
+                label(for='inputAddress') Address
+                input#inputAddress.form-control(type='text' placeholder='1234 Main St')
+              .form-group
+                label(for='inputAddress2') Address 2
+                input#inputAddress2.form-control(type='text' placeholder='Apartment, studio, or floor')
+              .form-row
+                .form-group.col-md-6
+                  label(for='inputCity') City
+                  input#inputCity.form-control(type='text')
+                .form-group.col-md-4
+                  label(for='inputState') State
+                  select#inputState.form-control
+                    option(selected='') Choose...
+                    option ...
+                .form-group.col-md-2
+                  label(for='inputZip') Zip
+                  input#inputZip.form-control(type='text')
+              hr.dotted.tall
+              h4.mb-3 Change Password
+              .form-row
+                .form-group.col-md-6
+                  label(for='inputPassword4') New Password
+                  input#inputPassword4.form-control(type='password' placeholder='Password')
+                .form-group.col-md-6
+                  label(for='inputPassword4') Re New Password
+                  input#inputPassword4.form-control(type='password' placeholder='Password')
+              .form-row
+                .col-md-12.text-right.mt-3
+                  button.btn.btn-primary.modal-confirm Save
+    .col-xl-3
+      h4.mb-3.mt-0 Sale Stats
+      ul.simple-card-list.mb-3
+        li.primary
+          h3 488
+          p.text-light Nullam quris ris.
+        li.primary
+          h3 $ 189,000.00
+          p.text-light Nullam quris ris.
+        li.primary
+          h3 16
+          p.text-light Nullam quris ris.
+      h4.mb-3.mt-4.pt-2 Projects
+      ul.simple-bullet-list.mb-3
+        li.red
+          span.title Porto Template
+          span.description.truncate Lorem ipsom dolor sit.
+        li.green
+          span.title Tucson HTML5 Template
+          span.description.truncate Lorem ipsom dolor sit amet
+        li.blue
+          span.title Porto HTML5 Template
+          span.description.truncate Lorem ipsom dolor sit.
+        li.orange
+          span.title Tucson Template
+          span.description.truncate Lorem ipsom dolor sit.
+      h4.mb-3.mt-4.pt-2 Messages
+      ul.simple-user-list.mb-3
+        li
+          figure.image.rounded
+            img.rounded-circle(src='img/!sample-user.jpg' alt='Joseph Doe Junior')
+          span.title Joseph Doe Junior
+          span.message Lorem ipsum dolor sit.
+        li
+          figure.image.rounded
+            img.rounded-circle(src='img/!sample-user.jpg' alt='Joseph Junior')
+          span.title Joseph Junior
+          span.message Lorem ipsum dolor sit.
+        li
+          figure.image.rounded
+            img.rounded-circle(src='img/!sample-user.jpg' alt='Joe Junior')
+          span.title Joe Junior
+          span.message Lorem ipsum dolor sit.
+        li
+          figure.image.rounded
+            img.rounded-circle(src='img/!sample-user.jpg' alt='Joseph Doe Junior')
+          span.title Joseph Doe Junior
+          span.message Lorem ipsum dolor sit.
+  // end: page

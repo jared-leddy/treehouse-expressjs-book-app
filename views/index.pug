@@ -1,0 +1,532 @@
+extends layout-dash
+
+block content
+  section.content-body(role='main')
+    header.page-header
+      h2 Default Layout
+      .right-wrapper.text-right
+        ol.breadcrumbs
+          li
+            a(href='/index')
+              i.fas.fa-home
+        a.sidebar-right-toggle(data-open='sidebar-right')
+          i.fas.fa-chevron-left
+    // start: page
+    .row
+      .col-lg-6.mb-3
+        section.card
+          .card-body
+            .row
+              .col-xl-8
+                #salesSelectorWrapper.chart-data-selector
+                  h2
+                    | Sales:
+                    strong
+                      select#salesSelector.form-control
+                        option(value='Porto Admin' selected='') Porto Admin
+                        option(value='Porto Drupal') Porto Drupal
+                        option(value='Porto Wordpress') Porto Wordpress
+                  #salesSelectorItems.chart-data-selector-items.mt-3
+                    // Flot: Sales Porto Admin
+                    #flotDashSales1.chart.chart-sm(data-sales-rel='Porto Admin' style='height: 203px;')
+                    script.
+                      var flotDashSales1Data = [{
+                      data: [
+                      ["Jan", 140],
+                      ["Feb", 240],
+                      ["Mar", 190],
+                      ["Apr", 140],
+                      ["May", 180],
+                      ["Jun", 320],
+                      ["Jul", 270],
+                      ["Aug", 180]
+                      ],
+                      color: "#0088cc"
+                      }];
+                      // See: js/examples/examples.dashboard.js for more settings.
+                    // Flot: Sales Porto Drupal
+                    #flotDashSales2.chart.chart-sm(data-sales-rel='Porto Drupal')
+                    script.
+                      var flotDashSales2Data = [{
+                      data: [
+                      ["Jan", 240],
+                      ["Feb", 240],
+                      ["Mar", 290],
+                      ["Apr", 540],
+                      ["May", 480],
+                      ["Jun", 220],
+                      ["Jul", 170],
+                      ["Aug", 190]
+                      ],
+                      color: "#2baab1"
+                      }];
+                      // See: js/examples/examples.dashboard.js for more settings.
+                    // Flot: Sales Porto Wordpress
+                    #flotDashSales3.chart.chart-sm(data-sales-rel='Porto Wordpress')
+                    script.
+                      var flotDashSales3Data = [{
+                      data: [
+                      ["Jan", 840],
+                      ["Feb", 740],
+                      ["Mar", 690],
+                      ["Apr", 940],
+                      ["May", 1180],
+                      ["Jun", 820],
+                      ["Jul", 570],
+                      ["Aug", 780]
+                      ],
+                      color: "#734ba9"
+                      }];
+                      // See: js/examples/examples.dashboard.js for more settings.
+              .col-xl-4.text-center
+                h2.card-title.mt-3 Sales Goal
+                .liquid-meter-wrapper.liquid-meter-sm.mt-3
+                  .liquid-meter
+                    meter#meterSales(min='0' max='100' value='35')
+                  #meterSalesSel.liquid-meter-selector.mt-4.pt-1
+                    a.active(href='#' data-val='35') Monthly Goal
+                    a(href='#' data-val='28') Annual Goal
+      .col-lg-6
+        .row.mb-3
+          .col-xl-6
+            section.card.card-featured-left.card-featured-primary.mb-3
+              .card-body
+                .widget-summary
+                  .widget-summary-col.widget-summary-col-icon
+                    .summary-icon.bg-primary
+                      i.fas.fa-life-ring
+                  .widget-summary-col
+                    .summary
+                      h4.title Support Questions
+                      .info
+                        strong.amount 1281
+                        span.text-primary (14 unread)
+                    .summary-footer
+                      a.text-muted.text-uppercase(href='#') (view all)
+          .col-xl-6
+            section.card.card-featured-left.card-featured-secondary
+              .card-body
+                .widget-summary
+                  .widget-summary-col.widget-summary-col-icon
+                    .summary-icon.bg-secondary
+                      i.fas.fa-dollar-sign
+                  .widget-summary-col
+                    .summary
+                      h4.title Total Profit
+                      .info
+                        strong.amount $ 14,890.30
+                    .summary-footer
+                      a.text-muted.text-uppercase(href='#') (withdraw)
+        .row
+          .col-xl-6
+            section.card.card-featured-left.card-featured-tertiary.mb-3
+              .card-body
+                .widget-summary
+                  .widget-summary-col.widget-summary-col-icon
+                    .summary-icon.bg-tertiary
+                      i.fas.fa-shopping-cart
+                  .widget-summary-col
+                    .summary
+                      h4.title Today&apos;s Orders
+                      .info
+                        strong.amount 38
+                    .summary-footer
+                      a.text-muted.text-uppercase(href='#') (statement)
+          .col-xl-6
+            section.card.card-featured-left.card-featured-quaternary
+              .card-body
+                .widget-summary
+                  .widget-summary-col.widget-summary-col-icon
+                    .summary-icon.bg-quaternary
+                      i.fas.fa-user
+                  .widget-summary-col
+                    .summary
+                      h4.title Today&apos;s Visitors
+                      .info
+                        strong.amount 3765
+                    .summary-footer
+                      a.text-muted.text-uppercase(href='#') (report)
+    .row.pt-4
+      .col-lg-6.mb-4.mb-lg-0
+        section.card
+          header.card-header
+            .card-actions
+              a.card-action.card-action-toggle(href='#' data-card-toggle='')
+              a.card-action.card-action-dismiss(href='#' data-card-dismiss='')
+            h2.card-title Best Seller
+            p.card-subtitle
+              | Customize the graphs as much as you want, there are so many options and features to display information using Porto Admin Template.
+          .card-body
+            // Flot: Basic
+            #flotDashBasic.chart.chart-md
+            script.
+              var flotDashBasicData = [{
+              data: [
+              [0, 170],
+              [1, 169],
+              [2, 173],
+              [3, 188],
+              [4, 147],
+              [5, 113],
+              [6, 128],
+              [7, 169],
+              [8, 173],
+              [9, 128],
+              [10, 128]
+              ],
+              label: "Series 1",
+              color: "#0088cc"
+              }, {
+              data: [
+              [0, 115],
+              [1, 124],
+              [2, 114],
+              [3, 121],
+              [4, 115],
+              [5, 83],
+              [6, 102],
+              [7, 148],
+              [8, 147],
+              [9, 103],
+              [10, 113]
+              ],
+              label: "Series 2",
+              color: "#2baab1"
+              }, {
+              data: [
+              [0, 70],
+              [1, 69],
+              [2, 73],
+              [3, 88],
+              [4, 47],
+              [5, 13],
+              [6, 28],
+              [7, 69],
+              [8, 73],
+              [9, 28],
+              [10, 28]
+              ],
+              label: "Series 3",
+              color: "#734ba9"
+              }];
+              // See: js/examples/examples.dashboard.js for more settings.
+      .col-lg-6
+        section.card
+          header.card-header
+            .card-actions
+              a.card-action.card-action-toggle(href='#' data-card-toggle='')
+              a.card-action.card-action-dismiss(href='#' data-card-dismiss='')
+            h2.card-title Server Usage
+            p.card-subtitle
+              | It&apos;s easy to create custom graphs on Porto Admin Template, there are several graph types that you can use.
+          .card-body
+            // Flot: Curves
+            #flotDashRealTime.chart.chart-md
+    .row.pt-4.mt-2
+      .col-lg-6.col-xl-3
+        section.card.card-transparent
+          header.card-header
+            .card-actions
+              a.card-action.card-action-toggle(href='#' data-card-toggle='')
+              a.card-action.card-action-dismiss(href='#' data-card-dismiss='')
+            h2.card-title My Profile
+          .card-body
+            section.card.card-group
+              header.card-header.bg-primary
+                .widget-profile-info
+                  .profile-picture
+                    img(src='img/!logged-user.jpg')
+                  .profile-info
+                    h4.name.font-weight-semibold John Doe
+                    h5.role Administrator
+                    .profile-footer
+                      a(href='#') (edit profile)
+              #accordion.w-100
+                .card.card-accordion.card-accordion-first
+                  .card-header.border-bottom-0
+                    h4.card-title
+                      a.accordion-toggle(data-toggle='collapse' data-parent='#accordion' href='#collapse1One')
+                        i.fas.fa-check.mr-1
+                        |  Tasks
+                  #collapse1One.accordion-body.collapse.show
+                    .card-body
+                      ul.widget-todo-list
+                        li
+                          .checkbox-custom.checkbox-default
+                            input#todoListItem1.todo-check(type='checkbox' checked='')
+                            label.todo-label(for='todoListItem1')
+                              span Curabitur ac sem at nibh egestas urabitur ac sem at nibh egestas.
+                          .todo-actions
+                            a.todo-remove(href='#')
+                              i.fas.fa-times
+                        li
+                          .checkbox-custom.checkbox-default
+                            input#todoListItem2.todo-check(type='checkbox')
+                            label.todo-label(for='todoListItem2')
+                              span Lorem ipsum dolor sit amet
+                          .todo-actions
+                            a.todo-remove(href='#')
+                              i.fas.fa-times
+                        li
+                          .checkbox-custom.checkbox-default
+                            input#todoListItem3.todo-check(type='checkbox')
+                            label.todo-label(for='todoListItem3')
+                              span Curabitur ac sem at nibh egestas
+                          .todo-actions
+                            a.todo-remove(href='#')
+                              i.fas.fa-times
+                        li
+                          .checkbox-custom.checkbox-default
+                            input#todoListItem4.todo-check(type='checkbox')
+                            label.todo-label(for='todoListItem4')
+                              span Lorem ipsum dolor sit amet
+                          .todo-actions
+                            a.todo-remove(href='#')
+                              i.fas.fa-times
+                        li
+                          .checkbox-custom.checkbox-default
+                            input#todoListItem5.todo-check(type='checkbox')
+                            label.todo-label(for='todoListItem5')
+                              span Curabitur ac sem at nibh egestas.
+                          .todo-actions
+                            a.todo-remove(href='#')
+                              i.fas.fa-times
+                        li
+                          .checkbox-custom.checkbox-default
+                            input#todoListItem6.todo-check(type='checkbox')
+                            label.todo-label(for='todoListItem6')
+                              span Lorem ipsum dolor sit amet
+                          .todo-actions
+                            a.todo-remove(href='#')
+                              i.fas.fa-times
+                        li
+                          .checkbox-custom.checkbox-default
+                            input#todoListItem7.todo-check(type='checkbox')
+                            label.todo-label(for='todoListItem7')
+                              span Curabitur ac sem at nibh egestas.
+                          .todo-actions
+                            a.todo-remove(href='#')
+                              i.fas.fa-times
+                      hr.solid.mt-3.mb-3
+                      form.form-horizontal.form-bordered(method='get')
+                        .form-group.row
+                          .col-sm-12
+                            .input-group.mb-3
+                              input.form-control(type='text')
+                              .input-group-append
+                                button.btn.btn-primary(type='button' tabindex='-1') Add
+                .card.card-accordion
+                  .card-header.border-bottom-0
+                    h4.card-title
+                      a.accordion-toggle(data-toggle='collapse' data-parent='#accordion' href='#collapse1Two')
+                        i.fas.fa-comment.mr-1
+                        |  Messages
+                  #collapse1Two.accordion-body.collapse
+                    .card-body
+                      ul.simple-user-list.mb-3
+                        li
+                          figure.image.rounded
+                            img.rounded-circle(src='img/!sample-user.jpg' alt='Joseph Doe Junior')
+                          span.title Joseph Doe Junior
+                          span.message Lorem ipsum dolor sit.
+                        li
+                          figure.image.rounded
+                            img.rounded-circle(src='img/!sample-user.jpg' alt='Joseph Junior')
+                          span.title Joseph Junior
+                          span.message Lorem ipsum dolor sit.
+                        li
+                          figure.image.rounded
+                            img.rounded-circle(src='img/!sample-user.jpg' alt='Joe Junior')
+                          span.title Joe Junior
+                          span.message Lorem ipsum dolor sit.
+                        li
+                          figure.image.rounded
+                            img.rounded-circle(src='img/!sample-user.jpg' alt='Joseph Doe Junior')
+                          span.title Joseph Doe Junior
+                          span.message Lorem ipsum dolor sit.
+      .col-lg-6.col-xl-3
+        section.card.card-transparent
+          header.card-header
+            .card-actions
+              a.card-action.card-action-toggle(href='#' data-card-toggle='')
+              a.card-action.card-action-dismiss(href='#' data-card-dismiss='')
+            h2.card-title My Stats
+          .card-body
+            section.card
+              .card-body
+                #sparklineBarDash.small-chart.float-right
+                script(type='text/javascript').
+                  var sparklineBarDashData = [5, 6, 7, 2, 0, 4 , 2, 4, 2, 0, 4 , 2, 4, 2, 0, 4];
+                .h4.font-weight-bold.mb-0 488
+                p.text-3.text-muted.mb-0 Average Profile Visits
+            section.card
+              .card-body
+                .circular-bar.circular-bar-xs.m-0.mt-1.mr-4.mb-0.float-right
+                  .circular-bar-chart(data-percent='45' data-plugin-options='{ "barColor": "#2baab1", "delay": 300, "size": 50, "lineWidth": 4 }')
+                    strong Average
+                    label
+                      span.percent 45
+                      | %
+                .h4.font-weight-bold.mb-0 12
+                p.text-3.text-muted.mb-0 Working Projects
+            section.card
+              .card-body
+                #sparklineLineDash.small-chart.float-right
+                script(type='text/javascript').
+                  var sparklineLineDashData = [15, 16, 17, 19, 10, 15, 13, 12, 12, 14, 16, 17];
+                .h4.font-weight-bold.mb-0 89
+                p.text-3.text-muted.mb-0 Pending Tasks
+        section.card.mb-3
+          header.card-header
+            .card-actions
+              a.card-action.card-action-toggle(href='#' data-card-toggle='')
+              a.card-action.card-action-dismiss(href='#' data-card-dismiss='')
+            h2.card-title
+              span.badge.badge-primary.font-weight-normal.va-middle.p-2.mr-2 198
+              span.va-middle Friends
+          .card-body
+            .content
+              ul.simple-user-list
+                li
+                  figure.image.rounded
+                    img.rounded-circle(src='img/!sample-user.jpg' alt='Joseph Doe Junior')
+                  span.title Joseph Doe Junior
+                  span.message.truncate Lorem ipsum dolor sit.
+                li
+                  figure.image.rounded
+                    img.rounded-circle(src='img/!sample-user.jpg' alt='Joseph Junior')
+                  span.title Joseph Junior
+                  span.message.truncate Lorem ipsum dolor sit.
+                li
+                  figure.image.rounded
+                    img.rounded-circle(src='img/!sample-user.jpg' alt='Joe Junior')
+                  span.title Joe Junior
+                  span.message.truncate Lorem ipsum dolor sit.
+              hr.dotted.short
+              .text-right
+                a.text-uppercase.text-muted(href='#') (View All)
+          .card-footer
+            .input-group
+              input#q.form-control(type='text' name='q' placeholder='Search...')
+              span.input-group-append
+                button.btn.btn-default(type='submit')
+                  i.fas.fa-search
+      .col-lg-12.col-xl-6
+        section.card
+          header.card-header.card-header-transparent
+            .card-actions
+              a.card-action.card-action-toggle(href='#' data-card-toggle='')
+              a.card-action.card-action-dismiss(href='#' data-card-dismiss='')
+            h2.card-title Company Activity
+          .card-body
+            .timeline.timeline-simple.mt-3.mb-3
+              .tm-body
+                .tm-title
+                  h5.m-0.pt-2.pb-2.text-uppercase November 2017
+                ol.tm-items
+                  li
+                    .tm-box
+                      p.text-muted.mb-0 7 months ago.
+                      p
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit augue at leo viverra, aliquam egestas lectus laoreet. Donec vehicula vestibulum ipsum, tincidunt ultrices elit suscipit ac. Sed eget risus laoreet, varius nibh id, luctus ligula. Nulla facilisi. 
+                        span.text-primary #awesome
+                  li
+                    .tm-box
+                      p.text-muted.mb-0 7 months ago.
+                      p
+                        | Checkout! How cool is that! Etiam efficitur, sapien eget vehicula gravida, magna neque volutpat risus, vitae tempus odio arcu ac elit. Aenean porta orci eu mi fermentum varius. Curabitur ac sem at nibh egestas. Curabitur ac sem at nibh egestas.
+                      .thumbnail-gallery
+                        a.img-thumbnail.lightbox(href='img/projects/project-4.jpg' data-plugin-options='{ "type":"image" }')
+                          img.img-fluid(width='215' src='img/projects/project-4.jpg')
+                          span.zoom
+                            i.fas.fa-search
+    .row.pt-4.mt-1
+      .col-xl-6
+        section.card.card-transparent.mb-3
+          header.card-header
+            .card-actions
+              a.card-action.card-action-toggle(href='#' data-card-toggle='')
+              a.card-action.card-action-dismiss(href='#' data-card-dismiss='')
+            h2.card-title Global Stats
+          .card-body
+            #vectorMapWorld(style='height: 350px; width: 100%;')
+      .col-xl-6
+        section.card
+          header.card-header.card-header-transparent
+            .card-actions
+              a.card-action.card-action-toggle(href='#' data-card-toggle='')
+              a.card-action.card-action-dismiss(href='#' data-card-dismiss='')
+            h2.card-title Projects Stats
+          .card-body
+            table.table.table-responsive-md.table-striped.mb-0
+              thead
+                tr
+                  th #
+                  th Project
+                  th Status
+                  th Progress
+              tbody
+                tr
+                  td 1
+                  td Porto - Responsive HTML5 Template
+                  td
+                    span.badge.badge-success Success
+                  td
+                    .progress.progress-sm.progress-half-rounded.m-0.mt-1.light
+                      .progress-bar.progress-bar-primary(role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 100%;')
+                        | 100%
+                tr
+                  td 2
+                  td Porto - Responsive Drupal 7 Theme
+                  td
+                    span.badge.badge-success Success
+                  td
+                    .progress.progress-sm.progress-half-rounded.m-0.mt-1.light
+                      .progress-bar.progress-bar-primary(role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 100%;')
+                        | 100%
+                tr
+                  td 3
+                  td Tucson - Responsive HTML5 Template
+                  td
+                    span.badge.badge-warning Warning
+                  td
+                    .progress.progress-sm.progress-half-rounded.m-0.mt-1.light
+                      .progress-bar.progress-bar-primary(role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 60%;')
+                        | 60%
+                tr
+                  td 4
+                  td Tucson - Responsive Business WordPress Theme
+                  td
+                    span.badge.badge-success Success
+                  td
+                    .progress.progress-sm.progress-half-rounded.m-0.mt-1.light
+                      .progress-bar.progress-bar-primary(role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 90%;')
+                        | 90%
+                tr
+                  td 5
+                  td Porto - Responsive Admin HTML5 Template
+                  td
+                    span.badge.badge-warning Warning
+                  td
+                    .progress.progress-sm.progress-half-rounded.m-0.mt-1.light
+                      .progress-bar.progress-bar-primary(role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 45%;')
+                        | 45%
+                tr
+                  td 6
+                  td Porto - Responsive HTML5 Template
+                  td
+                    span.badge.badge-danger Danger
+                  td
+                    .progress.progress-sm.progress-half-rounded.m-0.mt-1.light
+                      .progress-bar.progress-bar-primary(role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 40%;')
+                        | 40%
+                tr
+                  td 7
+                  td Porto - Responsive Drupal 7 Theme
+                  td
+                    span.badge.badge-success Success
+                  td
+                    .progress.progress-sm.progress-half-rounded.mt-1.light
+                      .progress-bar.progress-bar-primary(role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 95%;')
+                        | 95%
+    // end: page

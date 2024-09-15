@@ -1,0 +1,155 @@
+// start: header
+header.header
+  .logo-container
+    a.logo(href='../2.2.0')
+      img(src='img/logo.png' width='75' height='35' alt='Porto Admin')
+    .d-md-none.toggle-sidebar-left(data-toggle-class='sidebar-left-opened' data-target='html' data-fire-event='sidebar-left-opened')
+      i.fas.fa-bars(aria-label='Toggle sidebar')
+  // start: search & user box
+  .header-right
+    form.search.nav-form(action='pages-search-results.html')
+      .input-group
+        input#q.form-control(type='text' name='q' placeholder='Search...')
+        span.input-group-append
+          button.btn.btn-default(type='submit')
+            i.fas.fa-search
+    span.separator
+    ul.notifications
+      li
+        a.dropdown-toggle.notification-icon(href='#' data-toggle='dropdown')
+          i.fas.fa-tasks
+          span.badge 3
+        .dropdown-menu.notification-menu.large
+          .notification-title
+            span.float-right.badge.badge-default 3
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tasks
+          .content
+            ul
+              li
+                p.clearfix.mb-1
+                  span.message.float-left Generating Sales Report
+                  span.message.float-right.text-dark 60%
+                .progress.progress-xs.light
+                  .progress-bar(role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 60%;')
+              li
+                p.clearfix.mb-1
+                  span.message.float-left Importing Contacts
+                  span.message.float-right.text-dark 98%
+                .progress.progress-xs.light
+                  .progress-bar(role='progressbar' aria-valuenow='98' aria-valuemin='0' aria-valuemax='100' style='width: 98%;')
+              li
+                p.clearfix.mb-1
+                  span.message.float-left Uploading something big
+                  span.message.float-right.text-dark 33%
+                .progress.progress-xs.light.mb-1
+                  .progress-bar(role='progressbar' aria-valuenow='33' aria-valuemin='0' aria-valuemax='100' style='width: 33%;')
+      li
+        a.dropdown-toggle.notification-icon(href='#' data-toggle='dropdown')
+          i.fas.fa-envelope
+          span.badge 4
+        .dropdown-menu.notification-menu
+          .notification-title
+            span.float-right.badge.badge-default 230
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Messages
+          .content
+            ul
+              li
+                a.clearfix(href='#')
+                  figure.image
+                    img.rounded-circle.notification-icon(src='img/sample-user.jpg' alt='Joseph Doe Junior')
+                  span.title Joseph Doe
+                  span.message Lorem ipsum dolor sit.
+              li
+                a.clearfix(href='#')
+                  figure.image
+                    img.rounded-circle.notification-icon(src='img/sample-user.jpg' alt='Joseph Junior')
+                  span.title Joseph Junior
+                  span.message.truncate
+                    | Truncated message. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam, nec venenatis risus. Vestibulum blandit faucibus est et malesuada. Sed interdum cursus dui nec venenatis. Pellentesque non nisi lobortis, rutrum eros ut, convallis nisi. Sed tellus turpis, dignissim sit amet tristique quis, pretium id est. Sed aliquam diam diam, sit amet faucibus tellus ultricies eu. Aliquam lacinia nibh a metus bibendum, eu commodo eros commodo. Sed commodo molestie elit, a molestie lacus porttitor id. Donec facilisis varius sapien, ac fringilla velit porttitor et. Nam tincidunt gravida dui, sed pharetra odio pharetra nec. Duis consectetur venenatis pharetra. Vestibulum egestas nisi quis elementum elementum.
+              li
+                a.clearfix(href='#')
+                  figure.image
+                    img.rounded-circle.notification-icon(src='img/sample-user.jpg' alt='Joe Junior')
+                  span.title Joe Junior
+                  span.message Lorem ipsum dolor sit.
+              li
+                a.clearfix(href='#')
+                  figure.image
+                    img.rounded-circle.notification-icon(src='img/sample-user.jpg' alt='Joseph Junior')
+                  span.title Joseph Junior
+                  span.message
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam.
+            hr
+            .text-right
+              a.view-more(href='#') View All
+      li
+        a.dropdown-toggle.notification-icon(href='#' data-toggle='dropdown')
+          i.fas.fa-bell
+          span.badge 3
+        .dropdown-menu.notification-menu
+          .notification-title
+            span.float-right.badge.badge-default 3
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Alerts
+          .content
+            ul
+              li
+                a.clearfix(href='#')
+                  .image
+                    i.fas.fa-thumbs-down.bg-danger.text-light
+                  span.title Server is Down!
+                  span.message Just now
+              li
+                a.clearfix(href='#')
+                  .image
+                    i.fas.fa-lock.bg-warning.text-light
+                  span.title User Locked
+                  span.message 15 minutes ago
+              li
+                a.clearfix(href='#')
+                  .image
+                    i.fas.fa-signal.bg-success.text-light
+                  span.title Connection Restaured
+                  span.message 10/10/2017
+            hr
+            .text-right
+              a.view-more(href='#') View All
+    span.separator
+    #userbox.userbox
+      a(href='#' data-toggle='dropdown')
+        figure.profile-picture
+          img.rounded-circle(src='img/sample-user.jpg' alt='Joseph Doe' data-lock-picture='img/!logged-user.jpg')
+        .profile-info(data-lock-name='John Doe' data-lock-email='johndoe@okler.com')
+          span.name John Doe Junior
+          span.role Administrator
+        i.fa.custom-caret
+      .dropdown-menu
+        ul.list-unstyled.mb-2
+          li.divider
+          li
+            a(role='menuitem' tabindex='-1' href='pages-user-profile.html')
+              i.fas.fa-user
+              |  My Account
+          li
+            a(role='menuitem' tabindex='-1' href='#' data-lock-screen='true')
+              i.fas.fa-building
+              |  My Agency
+          li
+            a(role='menuitem' tabindex='-1' href='pages-signin.html')
+              i.fas.fa-graduation-cap
+              |  Knowledge Base
+          li
+            a(role='menuitem' tabindex='-1' href='pages-signin.html')
+              i.fas.fa-cog
+              |  Support
+          li
+            a(role='menuitem' tabindex='-1' href='pages-signin.html')
+              i.fas.fa-handshake
+              |  Partner Area
+          li
+            a(role='menuitem' tabindex='-1' href='pages-signin.html')
+              i.fas.fa-power-off
+              |  Logout
+              
+              
+  // end: search & user box
+// end: header
